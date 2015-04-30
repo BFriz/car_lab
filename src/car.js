@@ -7,7 +7,8 @@ function Car(make, model, year, color, state, previousOwners, currentOwner, pass
 }
 
 Car.prototype.sale = function(newOwner){
-
+  this.previousOwners.push(this.currentOwner)
+  this.currentOwner = newOwner;
 };
 
 Car.prototype.paint = function(newColor){
