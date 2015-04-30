@@ -1,9 +1,9 @@
-function Car(make, model, year, color, state, previousOwners, currentOwner, passengers){
+function Car(make, model, year, color, state, passengers, previousOwners, currentOwner){
   this.year = year;
   this.state = state;
   this.previousOwners = [];
   this.currentOwner = "Manufacturer";
-  this.passengers = [];
+  this.passengers = passengers;
   this.color = color;
 }
 
@@ -22,4 +22,15 @@ Car.prototype.start = function(){
 Car.prototype.off = function(){
  this.state = "off";
 }
+Car.prototype.pickUp = function(passengerName){
+  if (this.state === 'on') {
+    this.passengers.push(passengerName);
+  }
+}
+Car.prototype.dropOff = function(passengerName){
+  if (this.state === 'on') {
+    this.passengers = [];
+  }
+}
+
 module.exports=Car;
