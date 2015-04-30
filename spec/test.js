@@ -54,14 +54,14 @@ describe('Car', function(){
   });
 
   describe('#paint', function(){
-    xit('should update the color of myCar', function(){
+    it('should update the color of myCar', function(){
       myCar.paint("Blue");
       expect(myCar.color).to.equal("Blue");
     });
   });
 
   describe('#start', function(){
-    xit('should update the state to on', function(){
+    it('should update the state to on', function(){
       myCar.start();
       expect(myCar.state).to.equal("on");
     });
