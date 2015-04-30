@@ -1,6 +1,6 @@
 function Car(make, model, year, color, state, previousOwners, currentOwner, passengers){
   this.year = year;
-  this.state = "off";
+  this.state = state;
   this.previousOwners = [];
   this.currentOwner = "Manufacturer";
   this.passengers = [];
@@ -16,6 +16,10 @@ Car.prototype.paint = function(newColor){
   this.color = 'Blue';
 
 };
-
-
+Car.prototype.start = function(){
+ this.state = "on";
+}
+Car.prototype.off = function(){
+ this.state = "off";
+}
 module.exports=Car;
